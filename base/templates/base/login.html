@@ -1,0 +1,25 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<style>
+    #shadow {
+        box-shadow: 10px 10px 10px black;
+        
+        
+    }
+</style>
+<center>
+    <div class="header-bar" id="shadow">
+        <h1>Login</h1>
+    </div>
+</center>
+<div class="card-body" id="shadow" >
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endblock content %}
